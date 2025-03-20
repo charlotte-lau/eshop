@@ -1,0 +1,11 @@
+.text-h4 {
+    font-weight: 800 !important;
+}
+.btn-red {
+    background-color: #F44336 !important;
+    color: white !important;
+}
+.btn-gray {
+    background-color: #999999 !important;
+    color: white !important;
+}
