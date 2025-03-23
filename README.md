@@ -27,3 +27,9 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Deploy to GitHub Pages (https://your-username.github.io/your-repo-name/)
+
+```sh
+npm run deploy
+```
