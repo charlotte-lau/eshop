@@ -4,7 +4,7 @@ import { useCartStore } from '@/stores/cart';
 import ProductItem from '../components/ProductItem.vue'
 import axios from 'axios';
 import baseURL from '../services/api';
-import products from '../assets/json/products.json';
+import products from '@/assets/json/products.json';
 
 // loading - for indicating whether data has been finished loading
 const loading = ref(true);

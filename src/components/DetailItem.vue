@@ -1,5 +1,5 @@
 <script setup>
-import { computed,defineProps } from 'vue';
+import { computed, defineProps } from 'vue';
 import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import SvgIcon from '@jamescoyle/vue-icon'
@@ -29,33 +29,19 @@ const props = defineProps({
     }
 })
 
-const imageURLPath = computed(()=> {
-    if (props.item.imageURL !== '') {
-        const urls = props.item.imageURL.split(",");
-        console.log("111",urls)
-        // return '/src/assets/item.png';
-        // return `/src/assets/products/${url}.tiff`;
-        return `/src/assets/products/${urls}.jpg`;
-        console.log("1")
-    }else {
-        console.log("2")
-        return '/src/assets/products/404.jpg';
-    }
-})
-
 const images = computed(()=> {
     if (props.item.imageURL !== '') {
         const _urls = props.item.imageURL.split(",");
         const _images = Array.from({ length: _urls.length }, (_, index) => ({
             id: index + 1,
-            url: `/src/assets/products/${_urls[index]}.jpg`,
+            url: `${import.meta.env.BASE_URL}products/${_urls[index]}.jpg`,
         }));
         console.log("111",_images)
         return _images;
         console.log("1")
     }else {
         console.log("2")
-        return '/src/assets/products/404.jpg';
+        return `${import.meta.env.BASE_URL}products/404.jpg`;
     }
 })
 

@@ -29,13 +29,13 @@ const imageURLPath = computed(()=> {
     if (props.item.imageURL !== '') {
         const url = props.item.imageURL.split(",")[0];
         console.log("111",url)
-        // return '/src/assets/products/404.jpg';
-        // return `/src/assets/products/${url}.tiff`;
-        return `/src/assets/products/${url}.jpg`;
+        // return '/book.png';
+        // return `/products/${url}.tiff`;
+        return `${import.meta.env.BASE_URL}products/${url}.jpg`;
         console.log("1")
     }else {
         console.log("2")
-        return '/src/assets/products/404.jpg';
+        return `${import.meta.env.BASE_URL}products/404.jpg`;
     }
 })
 </script>

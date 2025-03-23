@@ -5,7 +5,7 @@ import { useCartStore } from '@/stores/cart';
 import DetailItem from '../components/DetailItem.vue'
 import axios from 'axios';
 import baseURL from '../services/api';
-import products from '../assets/json/products.json';
+import products from '@/assets/json/products.json';
 
 const paramId = useRoute().params.id;
 // store for shopping cart

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "title": "Camellia Ear Clip",
+    "price": "27",
+    "description": "Material：Copper, Simulated pearl\nSize：1 cm x 1 cm\nWeight：4 g\nYour affordable good quality jewellery.\n*Pre-order product",
+    "availableStock": "1",
+    "preOrder": "TRUE",
+    "imageURL": "camellia01,camellia02,camellia03,camellia04"
+  },
+  {
+    "id": "2",
+    "title": "Copper Plated gold Stellar Ear Clips",
+    "price": "32",
+    "description": "Material：Zircon, Copper Plated gold\nSize：2.5 cm x 0.5 cm\nWeight：2.1 g\nYour affordable good quality jewellery.\n* This is a pre-order product",
+    "availableStock": "1",
+    "preOrder": "TRUE",
+    "imageURL": "stellar01,stellar02,stellar03,stellar04,stellar05"
+  },
+  {
+    "id": "3",
+    "title": "Square stylish ear clips",
+    "price": "27",
+    "description": "Material：Copper, Wood\nClip：Screw clip\nSize：1.2 cm x 1.5 cm\nMade In Korea\nYour affordable good quality jewellery.",
+    "availableStock": "1",
+    "preOrder": "TRUE",
+    "imageURL": "ideal01,ideal02,ideal03"
+  },
+  {
+    "id": "4",
+    "title": "Sakura earring clips (pink)",
+    "price": "20",
+    "description": "Material：Alloy, Simulated Pearl\nSize：1.3 cm x 1.3 cm\nClip：Triangle clip\nColor: Pink\nYour affordable good quality jewellery.",
+    "availableStock": "1",
+    "preOrder": "TRUE",
+    "imageURL": "sakura01,sakura02,sakura03"
+  },
+  {
+    "id": "5",
+    "title": "Blue 3D heart-shaped earrings",
+    "price": "12",
+    "description": "Material： Resin\n*limited stock available\nYour affordable jewellery.",
+    "availableStock": "1",
+    "preOrder": "TRUE",
+    "imageURL": "heart01,heart02,heart03"
+  },
+  {
+    "id": "6",
+    "title": "Galaxy earrings hook",
+    "price": "12",
+    "description": "Material： Resin\n*limited stock available\nYour affordable jewellery.",
+    "availableStock": "1",
+    "preOrder": "TRUE",
+    "imageURL": "galaxy01,galaxy02"
+  },
+  {
+    "id": "7",
+    "title": "Galaxy earrings",
+    "price": "12",
+    "description": "Material： Resin\n*limited stock available\nYour affordable jewellery.",
+    "availableStock": "1",
+    "preOrder": "TRUE",
+    "imageURL": "stars01,stars02,stars03"
+  }
+]
