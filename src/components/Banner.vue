@@ -1,6 +1,6 @@
 <script setup>
 import SvgIcon from '@jamescoyle/vue-icon'
-import { mdiHome, mdiCart, mdiBookSearch } from '@mdi/js'
+import { mdiCart, mdiBookSearch } from '@mdi/js'
 
 const props = defineProps({
     title: {
@@ -31,12 +31,11 @@ const props = defineProps({
 <div class="container d-flex bg pa-2">
     <div class="left">
         <div v-if="logo != ''" class="logo"><img :src="logo"/></div>
-        <div class="text-h6 banner">{{ title }}</div>
+        <div @click="$router.push('/')" class="text-h6 banner">{{ title }}</div>
     </div>
     <div class="icon pr-2">        
         <div @click="search"><svg-icon type="mdi" :path="mdiBookSearch"></svg-icon></div>
         <div @click="goToCart"><svg-icon type="mdi" :path="mdiCart"></svg-icon>{{ totalBooks }}</div>
-        <div  @click="$router.push('/')"><svg-icon type="mdi" :path="mdiHome"></svg-icon></div>
     </div>
 </div>
 </template>
