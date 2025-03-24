@@ -91,14 +91,14 @@ const config = {
                         </ul>
                     </v-card-text>
                     <div class="actions">
-                        <v-btn :disabled="(item.availableStock==0)" class="btn-red mt-2" block @click="addToCart(item.id)">
+                        <v-btn :disabled="(item.availableStock==0)" class="btn-red mt-2" block @click="addToCart(item)">
                             <div><svg-icon  type="mdi" :path="mdiCart"></svg-icon></div>
                         </v-btn>
-                        <v-btn 
+                        <!-- <v-btn 
                         :disabled="(item.availableStock==0)" class="mt-4" 
                         block @click="buyNow(item.id)">
                             Purchase now 
-                        </v-btn>
+                        </v-btn> -->
                     </div>
                 </div>            
             </div>

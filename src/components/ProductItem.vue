@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiCart } from '@mdi/js'
 
@@ -11,7 +11,7 @@ const props = defineProps({
         isbn: String,
         price: Number,
         availableStock: Number,
-        imageURL: {
+        imagePreviewURL: {
             type: String,
             default: ''
         }
@@ -25,19 +25,10 @@ const props = defineProps({
     }
 })
 
-const imageURLPath = computed(()=> {
-    if (props.item.imageURL !== '') {
-        const url = props.item.imageURL.split(",")[0];
-        console.log("111",url)
-        // return '/book.png';
-        // return `/products/${url}.tiff`;
-        return `${import.meta.env.BASE_URL}products/${url}.jpg`;
-        console.log("1")
-    }else {
-        console.log("2")
-        return `${import.meta.env.BASE_URL}products/404.jpg`;
-    }
-})
+onMounted(async ()=>{
+    // get book list on mount
+    console.log('props.item',props.item);
+});
 </script>
 
 <template>
@@ -45,7 +36,7 @@ const imageURLPath = computed(()=> {
         <v-card class="text-center">
             <div   @click="$router.push('detail/'+item.id)">
                 <div class="d-flex justify-center">
-                    <img :src="imageURLPath" width="180" height="180" />
+                    <img :src="item.imagePreviewURL" width="180" height="180" />
                 </div>
                 <v-card-item>
                     <v-card-title class="text-subtitle-1 h-2">{{  item.title  }}</v-card-title>
@@ -59,7 +50,7 @@ const imageURLPath = computed(()=> {
             <v-card-actions class="d-flex flex-column">
                 <v-btn variant="tonal"  size="small"
                 :disabled="(item.availableStock==0)" 
-                block @click="addToCart(item.id)">
+                block @click="addToCart(item)">
                     <svg-icon type="mdi" :path="mdiCart"></svg-icon>
                 </v-btn>
                 <!-- <v-btn class="btn-gray" block >Detail</v-btn> -->

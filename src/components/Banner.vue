@@ -1,6 +1,7 @@
 <script setup>
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiCart, mdiBookSearch } from '@mdi/js'
+import { useCartStore } from '@/stores/cart';
 
 const props = defineProps({
     title: {
@@ -11,20 +12,18 @@ const props = defineProps({
         type: String,
         default: ''
     },
-    totalBooks: {
-        type: Number,
-        default: 0
-    },
     search: {
         type: Function
     },
     goToCart: {
         type: Function
-    },
-    goHome: {
-        type: Function
     }
 })
+const cartStore = useCartStore();
+
+const toggleCartVisibility = () => {
+    cartStore.toggleCart()  // Toggle visibility based on the store
+}
 </script>
 
 <template>
@@ -35,7 +34,7 @@ const props = defineProps({
     </div>
     <div class="icon pr-2">        
         <div @click="search"><svg-icon type="mdi" :path="mdiBookSearch"></svg-icon></div>
-        <div @click="goToCart"><svg-icon type="mdi" :path="mdiCart"></svg-icon>{{ totalBooks }}</div>
+        <div @click="toggleCartVisibility"><svg-icon type="mdi" :path="mdiCart"></svg-icon>{{ cartStore.count }}</div>
     </div>
 </div>
 </template>
@@ -51,6 +50,7 @@ const props = defineProps({
 .banner {
     font-size: 1.2rem !important;
     font-family:  Copperplate, Papyrus,fantasy !important;
+    cursor: pointer;
 }
 .logo {
     padding-right: 10px;
