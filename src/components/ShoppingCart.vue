@@ -37,7 +37,7 @@ const removeFromCart = (index) => {
         scroll-strategy="block">
         <transition name="slide">
             <v-sheet class="cart-content">
-                <v-list class="v-list">
+                <v-list class="v-list"  v-if="cartStore.count>0">
                     <v-list-item v-for="(item, index) in list" :key="index">
                         <v-card class="text-center">
                                 <div>
@@ -54,9 +54,10 @@ const removeFromCart = (index) => {
                                 </div>
                             </v-card>
                     </v-list-item>
-                    <div class="bottom"><v-btn size="large" block color="black">Checkout</v-btn></div>
+                    <div class="bottom"  v-if="cartStore.count>0"><v-btn size="large" block color="black">Checkout</v-btn></div>
                 </v-list>
-            </v-sheet>
+                <div class="empty-cart" v-else><p>Your Shopping Cart is empty.</p></div>
+        </v-sheet>
         </transition>
 
         <!-- <v-container class="v-container">
@@ -96,6 +97,26 @@ const removeFromCart = (index) => {
   max-height: 300px; /* Limit height */
   overflow-y: auto; /* Enable scrolling */
   padding: 10px;
+}
+
+/* Empty Cart Message */
+.empty-cart {
+    text-align: center;
+    color: gray;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 280px;
+    z-index: 1000; /* Higher than overlay */
+    background-color: white;
+    padding: 0 !important;
+}
+
+.empty-cart > p {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .v-list {
