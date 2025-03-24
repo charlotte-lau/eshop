@@ -6,7 +6,8 @@ export const useCartStore = defineStore('cart', {
     return {
       totalPrice: 0,
       list: {},
-      cartVisible: true
+      cartVisible: true,
+      currency: 'NZD'
     }
   },
   getters: {
@@ -23,6 +24,8 @@ export const useCartStore = defineStore('cart', {
   },
   actions: {
     addToCart(item) {
+      if (item.price != 'undefined')
+        this.totalPrice += parseFloat(item.price);
       if (typeof(this.list[item.id]) != 'undefined' && this.list[item.id]['qty'] != 'undefined' ){
         this.list[item.id]['qty'] += 1;
       }else {
@@ -32,7 +35,7 @@ export const useCartStore = defineStore('cart', {
     },
     removeFromCart(id) {
       if (this.list[id]) {
-        this.totalPrice -= this.list[id].price * this.list[id].qty;
+        this.totalPrice -= parseFloat(this.list[id].detail.price) * parseFloat(this.list[id].qty);
         console.log('before delete', this.list);
         delete this.list[id];
         console.log('after delete', this.list);

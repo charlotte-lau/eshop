@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted, computed } from 'vue';
 import { useCartStore } from '@/stores/cart';
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiTrashCan } from '@mdi/js';
@@ -18,12 +17,6 @@ const props = defineProps({
     }
 })
 const cartStore = useCartStore();
-
-onMounted(async ()=>{
-    // get book list on mount
-    // console.log('products',props.products);
-    // console.log('list',props.list);
-});
 
 const removeFromCart = (index) => {
     cartStore.removeFromCart(index);

@@ -45,6 +45,7 @@ const productsWIthImages = computed(()=> {
   <ShoppingCart v-if="cartStore.cartVisible"
       :list="cartStore.list"
       :products="productsWIthImages"
+      :currency="cartStore.currency"
   ></ShoppingCart>
 </template>
 

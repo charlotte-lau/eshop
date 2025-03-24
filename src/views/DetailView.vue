@@ -38,6 +38,7 @@ onMounted(async ()=>{
         :item="item"
         :addToCart="addToCart"
         :buyNow="buyNow"
+        :currency="cartStore.currency"
         />
     </div>
     <div class="loading text-center" v-else>

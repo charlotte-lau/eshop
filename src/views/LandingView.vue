@@ -40,6 +40,7 @@ const productsWIthImages = computed(()=> {
                 <ProductItem v-for="item in productsWIthImages" 
                 :item="item"
                 :addToCart="addToCart"
+                :currency="cartStore.currency"
                 />
             </v-row>
         </v-container>
